@@ -6,17 +6,16 @@ export function initJsBridge() {
         return
     }
 
-    window.injectInstance = () => {
+    window.initJs = true
 
-        if (window.callbacks) {
+    if (window.callBacks == undefined) {
     
-            window.callbacks = {}
-        }
+        window.callBacks = {}
     }
     
     window.regCallbacks = (callback) => {
     
-        let callbackId = new Date().getTime()
+        let callbackId = (new Date().getTime()).toString()
     
         window.callBacks[callbackId] = (params)=>{
     

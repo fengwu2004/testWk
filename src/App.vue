@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       result: "",
-      eventId: 12007,
+      eventId: 12017,
     };
   },
   mounted() {
@@ -29,7 +29,9 @@ export default {
 
       var funcNo = this.eventId;
 
-      let param = {};
+      let loginType = '2'
+
+      let param = {loginType};
 
       var callback = (nativeparams) => {
 
