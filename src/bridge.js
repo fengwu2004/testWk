@@ -20,7 +20,9 @@ export function initJsBridge() {
         window.callBacks[callbackId] = (params)=>{
     
             callback(params)
-        } 
+        }
+
+        return callbackId
     }
     
     window.onResponseNative = (callbackId, params) => {
