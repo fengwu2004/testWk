@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       result: "",
-      eventId: 11002,
+      eventId: 12010,
     };
   },
   mounted() {
@@ -29,9 +29,22 @@ export default {
 
       var funcNo = this.eventId;
 
-      let loginType = '2'
+      let url = 'https://www.baidu.com'
 
-      let param = {loginType};
+      let title = "我的"
+
+      let coloString = '#00FF00'
+
+      let code = "601788"
+
+      let codedd = "601788"
+
+      let param = {
+        url,
+        title,
+        coloString,
+        code
+        };
 
       var callback = (nativeparams) => {
 
