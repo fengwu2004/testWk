@@ -3,6 +3,7 @@
     <div>
       <input class="textfield" v-model="eventId" />
       <div class="btn" v-on:click="doTest">测试接口</div>
+      <a href="itms-services://?action=download-manifest&url=https://10.90.25.46/manifest.plist">点击在线安装ipa</a>
       <div>输出</div>
       <div>{{ result }}</div>
     </div>
@@ -17,7 +18,7 @@ export default {
   data() {
     return {
       result: "",
-      eventId: 12010,
+      eventId: 10003,
     };
   },
   mounted() {
@@ -27,7 +28,7 @@ export default {
   methods: {
     doTest() {
 
-      var funcNo = this.eventId;
+      var funcNo = 12029;
 
       let url = 'https://www.baidu.com'
 
@@ -35,16 +36,21 @@ export default {
 
       let coloString = '#00FF00'
 
-      let code = "601788"
+      let requestFlag = 0
 
       let codedd = "601788"
 
+      let pageId = "1-21-4-37-1"
+
       let param = {
+        pageId,
         url,
         title,
         coloString,
-        code
+        requestFlag,
         };
+
+      let paramstr = JSON.stringify(param)
 
       var callback = (nativeparams) => {
 
@@ -52,7 +58,7 @@ export default {
       };
 
       let data = {
-        param,
+        param:paramstr,
         funcNo,
       };
 
